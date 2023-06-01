@@ -6,8 +6,7 @@
 
 enum settingTypes {
     SET_TYPE_BOOL,
-    SET_TYPE_CHAR,
-    SET_TYPE_INT,
+    SET_TYPE_INT8,
     NUM_SETTING_TYPES
 };
 
@@ -22,6 +21,7 @@ class setting_obj {
 
         setting_obj();
         setting_obj(uint8_t nIdx, String nName, String nDesc, uint8_t nType, uint8_t nValue);
+
 };
 
 #endif
