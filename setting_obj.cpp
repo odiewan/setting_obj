@@ -6,7 +6,7 @@ setting_obj::setting_obj() {
     soName = "Default Setting Name";
     soDesc = "Default Setting Description";
     soType = SET_TYPE_BOOL;
-    soBool = 0;
+    soBool = false;
 }
 
 //=================================================================================================
