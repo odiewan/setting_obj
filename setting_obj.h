@@ -1,30 +1,34 @@
 #ifndef SETTING_OBJ_H_
 #define SETTING_OBJ_H_
 
-#include "Arduino.h"
 #include <String.h>
+#include "Arduino.h"
+#include "ESPFlashCounter.h"
+#include "ESPFlashString.h"
 
 enum settingTypes {
   SET_TYPE_BOOL,
-  SET_TYPE_INT8,
-  SET_TYPE_BOOL_NV,
-  SET_TYPE_INT8_NV,
+  SET_TYPE_CNTR,
+  SET_TYPE_SRING,
   NUM_SETTING_TYPES
 };
 
 class setting_obj {
-    public:
-     uint8_t* setEepromPtr;
-     uint8_t setIndex;  //--index to 512 x 1 byte nvram space
-     String setName;
-     String setDesc;
-     uint8_t setType;  // bool char int
-     uint8_t setValue;
+  public:
+     String soName;
+     String soDesc;
+     uint8_t soType;  // bool, cntr, string
+     ESPFlashString soEspFlashStr;
+     ESPFlashCounter soEspFlashCnt;
+
+     uint8_t soBool;
+     uint16_t soCntr;
+     String soString;
 
      setting_obj();
-     setting_obj(uint8_t nIdx, String nName, String nDesc, uint8_t nType, uint8_t nValue);
-     setting_obj(uint8_t nIdx, String nName, uint8_t nType, uint8_t nValue);
-     setting_obj(String nName, uint8_t nType, uint8_t nValue);
+     setting_obj(String nName, String nDesc, uint8_t nValue);
+     setting_obj(String nName, String nDesc, uint16_t nValue);
+     setting_obj(String nName, String nDesc, String nValue);
      //  setting_obj(uint8_t nIdx, uint8_t* nPtr, String nName, uint8_t nType);
 };
 

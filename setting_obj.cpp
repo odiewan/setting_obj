@@ -3,46 +3,32 @@
 
 //=================================================================================================
 setting_obj::setting_obj() {
-    setIndex = 0;
-    setName = "Default Setting Name";
-    setDesc = "Default Setting Description";
-    setType = SET_TYPE_BOOL;
-    setValue = 0;
+    soName = "Default Setting Name";
+    soDesc = "Default Setting Description";
+    soType = SET_TYPE_BOOL;
+    soBool = 0;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(uint8_t nIdx, String nName, String nDesc, uint8_t nType, uint8_t nValue) {
-    setIndex = nIdx;
-    setName = nName;
-    setDesc = nDesc;
-    setType = nType;
-    setValue = nValue;
+setting_obj::setting_obj(String nName, String nDesc, uint8_t nValue) {
+    soName = nName;
+    soDesc = nDesc;
+    soType = SET_TYPE_BOOL;
+    soBool = nValue;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(uint8_t nIdx, String nName, uint8_t nType, uint8_t nValue) {
-    setIndex = nIdx;
-    setName = nName;
-    setDesc = nName;
-    setType = nType;
-    setValue = nValue;
+setting_obj::setting_obj(String nName, String nDesc,  uint16_t nValue) {
+    soName = nName;
+    soDesc = nName;
+    soType = SET_TYPE_CNTR;
+    soCntr = nValue;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(String nName, uint8_t nType, uint8_t nValue) {
-    setIndex = 0;
-    setName = nName;
-    setDesc = nName;
-    setType = nType;
-    setValue = nValue;
+setting_obj::setting_obj(String nName, String nDesc, String nValue) {
+    soName = nName;
+    soDesc = nName;
+    soType = SET_TYPE_SRING;
+    soString = nValue;
 }
-
-// //=================================================================================================
-// setting_obj::setting_obj(uint8_t nIdx, uint8_t * nPtr, String nName, uint8_t nType){
-//     setEepromPtr = nPtr;
-//     setIndex = nIdx;
-//     setName = nName;
-//     setDesc = nName;
-//     setType = nType;
-//     setValue = nPtr[nIdx];
-// }
