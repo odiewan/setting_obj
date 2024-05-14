@@ -23,13 +23,13 @@ class setting_obj {
 
      setting_obj();
 
-     setting_obj(String nName, uint8_t nValue, bool nCanEdit);
-     setting_obj(String nName, uint16_t nValue, bool nCanEdit);
-     setting_obj(String nName, String nValue, bool nCanEdit);
+     setting_obj(String nName, uint8_t nValue, bool nReadOnly);
+     setting_obj(String nName, uint16_t nValue, bool nReadOnly);
+     setting_obj(String nName, String nValue, bool nReadOnly);
 
-     setting_obj(String nName, String nDesc, uint8_t nValue, bool nCanEdit);
-     setting_obj(String nName, String nDesc, uint16_t nValue, bool nCanEdit);
-     setting_obj(String nName, String nDesc, String nValue, bool nCanEdit);
+     setting_obj(String nName, String nDesc, uint8_t nValue, bool nReadOnly);
+     setting_obj(String nName, String nDesc, uint16_t nValue, bool nReadOnly);
+     setting_obj(String nName, String nDesc, String nValue, bool nReadOnly);
 
      void soSetVal(uint8_t nValue);
      void soSetVal(uint16_t nValue);

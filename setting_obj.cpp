@@ -9,66 +9,66 @@ setting_obj::setting_obj() {
     soDesc = "Default Setting Description";
     soType = SET_TYPE_BOOL;
     soBool = false;
-    soCanEdit = false;
+    soReadOnly = false;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(String nName, uint8_t nValue, bool nCanEdit) {
+setting_obj::setting_obj(String nName, uint8_t nValue, bool nReadOnly) {
     soName = nName;
 
     soDesc = "Default description";
     soType = SET_TYPE_CNTR;
     soCntr = nValue;
-    soCanEdit = nCanEdit;
+    soReadOnly = nReadOnly;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(String nName, uint16_t nValue, bool nCanEdit) {
+setting_obj::setting_obj(String nName, uint16_t nValue, bool nReadOnly) {
     soName = nName;
 
     soDesc = "Default description";
     soType = SET_TYPE_CNTR;
     soCntr = nValue;
-    soCanEdit = nCanEdit;
+    soReadOnly = nReadOnly;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(String nName, String nValue, bool nCanEdit) {
+setting_obj::setting_obj(String nName, String nValue, bool nReadOnly) {
     soName = nName;
 
     soDesc = "Default description";
     soType = SET_TYPE_SRING;
     soString = nValue;
-    soCanEdit = nCanEdit;
+    soReadOnly = nReadOnly;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(String nName, String nDesc, uint8_t nValue, bool nCanEdit) {
+setting_obj::setting_obj(String nName, String nDesc, uint8_t nValue, bool nReadOnly) {
     soName = nName;
 
     soDesc = nDesc;
     soType = SET_TYPE_BOOL;
     soBool = nValue;
-    soCanEdit = nCanEdit;
+    soReadOnly = nReadOnly;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(String nName, String nDesc, uint16_t nValue, bool nCanEdit) {
+setting_obj::setting_obj(String nName, String nDesc, uint16_t nValue, bool nReadOnly) {
   soName = nName;
 
   soDesc = nName;
   soType = SET_TYPE_CNTR;
   soCntr = nValue;
-  soCanEdit = nCanEdit;
+  soReadOnly = nReadOnly;
 }
 
 //=================================================================================================
-setting_obj::setting_obj(String nName, String nDesc, String nValue, bool nCanEdit) {
+setting_obj::setting_obj(String nName, String nDesc, String nValue, bool nReadOnly) {
   soName = nName;
   soDesc = nName;
   soType = SET_TYPE_SRING;
   soString = nValue;
-  soCanEdit = nCanEdit;
+  soReadOnly = nReadOnly;
 }
 
 
