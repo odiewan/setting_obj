@@ -15,7 +15,7 @@ class setting_obj {
      String soName;
      String soDesc;
      uint8_t soType;  // bool, cntr, string
-     bool soCanEdit;
+     bool soReadOnly;
 
      uint8_t soBool;
      uint16_t soCntr;
