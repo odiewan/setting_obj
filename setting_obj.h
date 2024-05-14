@@ -15,6 +15,7 @@ class setting_obj {
      String soName;
      String soDesc;
      uint8_t soType;  // bool, cntr, string
+     bool soCanEdit;
 
      uint8_t soBool;
      uint16_t soCntr;
@@ -22,13 +23,13 @@ class setting_obj {
 
      setting_obj();
 
-     setting_obj(String nName, uint8_t nValue);
-     setting_obj(String nName, uint16_t nValue);
-     setting_obj(String nName, String nValue);
+     setting_obj(String nName, uint8_t nValue, bool nCanEdit);
+     setting_obj(String nName, uint16_t nValue, bool nCanEdit);
+     setting_obj(String nName, String nValue, bool nCanEdit);
 
-     setting_obj(String nName, String nDesc, uint8_t nValue);
-     setting_obj(String nName, String nDesc, uint16_t nValue);
-     setting_obj(String nName, String nDesc, String nValue);
+     setting_obj(String nName, String nDesc, uint8_t nValue, bool nCanEdit);
+     setting_obj(String nName, String nDesc, uint16_t nValue, bool nCanEdit);
+     setting_obj(String nName, String nDesc, String nValue, bool nCanEdit);
 
      void soSetVal(uint8_t nValue);
      void soSetVal(uint16_t nValue);
@@ -37,6 +38,10 @@ class setting_obj {
      uint8_t getBool();
      uint16_t getCounter();
      String getString();
+
+     String getValAsString();
+
+
 };
 
 #endif
