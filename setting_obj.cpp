@@ -61,8 +61,8 @@ setting_obj::setting_obj(String nName, String nDefValue, bool nReadOnly) {
 
 //===================================================================================================
 void setting_obj::constructor_core() {
-    soName = "def setting object";
-    soDesc = "setting obj desc";
+    soName = "def setting name";
+    soDesc = "setting desc";
     soType = SET_TYPE_BOOL;
     soReadOnly = false;
     soBool = false;
@@ -110,7 +110,7 @@ String  setting_obj::getString() {
 
 //==================================================================================================
 String  setting_obj::getValAsString() {
-    String _tmpStr = ":";
+    String _tmpStr = ":v";
 
     switch (soType) {
         case SET_TYPE_BOOL:
