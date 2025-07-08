@@ -11,7 +11,7 @@ setting_obj::setting_obj() {
 
 
 //===================================================================================================
-setting_obj::setting_obj(String nName, bool nDefValue, bool nReadOnly) {
+setting_obj::setting_obj(String nName, int nIndex, bool nDefValue, bool nReadOnly) {
     constructor_core();
     soName = nName;
     soType = SET_TYPE_BOOL;
@@ -20,7 +20,7 @@ setting_obj::setting_obj(String nName, bool nDefValue, bool nReadOnly) {
     }
 
 //===================================================================================================
-setting_obj::setting_obj(String nName, uint16_t nDefValue, bool nReadOnly) {
+setting_obj::setting_obj(String nName, int nIndex, int nDefValue, bool nReadOnly) {
     constructor_core();
     soName = nName;
     soType = SET_TYPE_CNTR;
@@ -29,7 +29,7 @@ setting_obj::setting_obj(String nName, uint16_t nDefValue, bool nReadOnly) {
     }
 
 //===================================================================================================
-setting_obj::setting_obj(String nName, String nDefValue, bool nReadOnly) {
+setting_obj::setting_obj(String nName, int nIndex, String nDefValue, bool nReadOnly) {
     constructor_core();
     soName = nName;
     soType = SET_TYPE_STRING;
@@ -66,6 +66,7 @@ void setting_obj::constructor_core() {
     soType = SET_TYPE_BOOL;
     soReadOnly = false;
     soBool = false;
+    soByte = 0;
     soCntr = 0;
     soString = "def_str";
     // SPIFFS.begin();
@@ -75,12 +76,14 @@ void setting_obj::constructor_core() {
 //=================================================================================================
 void setting_obj::soSetVal(bool nValue) {
     soBool = nValue;
+    soByte = (uint8_t)nValue;
     // soEspFlashCounterPtr->set(nValue);
     }
 
 //=================================================================================================
-void setting_obj::soSetVal(uint16_t nValue) {
+void setting_obj::soSetVal(int nValue) {
     soCntr = nValue;
+    soByte = (uint8_t)nValue;
     // soEspFlashCounterPtr->set(nValue);
     }
 
@@ -97,8 +100,8 @@ bool setting_obj::getBool() {
 }
 
 //==================================================================================================
-uint16_t setting_obj::getCounter() {
-    // return (uint16_t)soEspFlashCounterPtr->get();
+int setting_obj::getCounter() {
+  // return (int)soEspFlashCounterPtr->get();
 return soCntr;
 }
 

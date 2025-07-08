@@ -13,13 +13,16 @@ enum settingTypes {
 
 class setting_obj {
   public:
+    int soIndex;
     String soName;
     String soDesc;
     uint8_t soType;  // bool, cntr, string
     bool soReadOnly;
 
+    uint8_t soByte;
+
     uint8_t soBool;
-    uint16_t soCntr;
+    int soCntr;
     String soString;
 
     setting_obj();
@@ -27,9 +30,9 @@ class setting_obj {
     // ESPFlashCounter* soEspFlashCounterPtr;
     // ESPFlashString* soEspFlashString;
 
-    setting_obj(String nName, bool nValue, bool nReadOnly);
-    setting_obj(String nName, uint16_t nValue, bool nReadOnly);
-    setting_obj(String nName, String nValue, bool nReadOnly);
+    setting_obj(String nName, int nIndex, bool nValue, bool nReadOnly);
+    setting_obj(String nName, int nIndex, int nValue, bool nReadOnly);
+    setting_obj(String nName, int nIndex, String nValue, bool nReadOnly);
 
     // setting_obj(String nName, bool nValue, ESPFlashCounter* nEspFlashCntr, bool nReadOnly);
     // setting_obj(String nName, uint16_t nValue, ESPFlashCounter* nEspFlashCntr, bool nReadOnly);
@@ -37,12 +40,15 @@ class setting_obj {
 
 
     void soSetVal(bool nValue);
-    void soSetVal(uint16_t nValue);
+    void soSetVal(int nValue);
     void soSetVal(String nValue);
 
+
     bool getBool();
-    uint16_t getCounter();
+    int getCounter();
     String getString();
+    uint8_t getVal() { return soByte; };
+    uint getIndex() { return soIndex;};
 
     String getValAsString();
 
