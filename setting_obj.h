@@ -22,9 +22,12 @@ class setting_obj {
      uint8_t setValue;
 
      setting_obj();
-     setting_obj(uint8_t nIdx, String nName, String nDesc, uint8_t nType, uint8_t nValue);
-     setting_obj(uint8_t nIdx, String nName, uint8_t nType, uint8_t nValue);
+     setting_obj(String nName, uint8_t nIdx, String nDesc, uint8_t nType, uint8_t nValue);
+     setting_obj(String nName, uint8_t nIdx, uint8_t nType, uint8_t nValue);
      setting_obj(String nName, uint8_t nType, uint8_t nValue);
+     uint8_t getIdx();
+     uint8_t getVal();
+     void setVal(uint8_t nVal);
      //  setting_obj(uint8_t nIdx, uint8_t* nPtr, String nName, uint8_t nType);
 };
 

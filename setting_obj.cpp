@@ -11,7 +11,7 @@ setting_obj::setting_obj() {
 }
 
 //=================================================================================================
-setting_obj::setting_obj(uint8_t nIdx, String nName, String nDesc, uint8_t nType, uint8_t nValue) {
+setting_obj::setting_obj(String nName, uint8_t nIdx, String nDesc, uint8_t nType, uint8_t nValue) {
     setIndex = nIdx;
     setName = nName;
     setDesc = nDesc;
@@ -20,7 +20,7 @@ setting_obj::setting_obj(uint8_t nIdx, String nName, String nDesc, uint8_t nType
 }
 
 //=================================================================================================
-setting_obj::setting_obj(uint8_t nIdx, String nName, uint8_t nType, uint8_t nValue) {
+setting_obj::setting_obj(String nName, uint8_t nIdx, uint8_t nType, uint8_t nValue) {
     setIndex = nIdx;
     setName = nName;
     setDesc = nName;
@@ -39,10 +39,26 @@ setting_obj::setting_obj(String nName, uint8_t nType, uint8_t nValue) {
 
 // //=================================================================================================
 // setting_obj::setting_obj(uint8_t nIdx, uint8_t * nPtr, String nName, uint8_t nType){
-//     setEepromPtr = nPtr;
-//     setIndex = nIdx;
-//     setName = nName;
-//     setDesc = nName;
-//     setType = nType;
-//     setValue = nPtr[nIdx];
-// }
+    //     setEepromPtr = nPtr;
+    //     setIndex = nIdx;
+    //     setName = nName;
+    //     setDesc = nName;
+    //     setType = nType;
+    //     setValue = nPtr[nIdx];
+    // }
+    
+//=================================================================================================
+uint8_t setting_obj::getIdx() {
+    return setIndex;
+}
+
+//=================================================================================================
+void setting_obj::setVal(uint8_t nVal) {
+    setValue = nVal;
+    
+}
+
+//=================================================================================================
+uint8_t setting_obj::getVal() {
+    return setValue;
+}
